@@ -1,1 +1,1 @@
-# KidsParadise
+# Kids Paradise - Ecommerce website project
