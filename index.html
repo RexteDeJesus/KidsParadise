@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Signup and Signin - final layout </title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <style>
+        body {
+             margin: 0;
+             background: url(https://res.cloudinary.com/dgjjjp3di/image/upload/v1711796314/3d-cartoon-background-children_sstzup.jpg);
+             background-repeat: no-repeat;
+             background-position: center;
+             background-size: cover;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /border:1px solid black;
+            position: relative;
+        }
+        
+        form {
+            position: absolute;
+            right: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /color: #fff;
+            border-radius: 10px;
+            /border: 2px solid purple;
+            width: 300px;
+            padding: 20px;
+            height: 400px;
+            /background-color: #5E503F;
+            /background-color: rgba(255, 255, 255 / 30%);
+            /-webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(10px);
+            /box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+            box-shadow:inset 5px 5px 9px rgba(255,255,255,0.45),
+            20px 20px 5px rgba(0,0,0,0.25);
+        }
+        
+        .head {
+            /border: 2px solid purple;
+            color: black;
+            font-size: 25px;
+            font-family: serif;
+            border-radius: 5px;
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            /background-color: #fff;
+        }
+        
+        .input-container {
+            width: 100%;
+            position: relative;
+        }
+        
+        .fields {
+           display: flex;
+           flex-direction: column;
+           gap: 5px;
+        }
+        
+        input {
+           /border: 0.4px solid black;
+           border-radius: 3px;
+           padding-left: 10px;
+           height: 25px;
+           background-color: transparent;
+           border: 1px solid black;
+           /border: none;
+           /box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+       }
+        
+        .name {
+           gap: 5px;
+       }
+        
+        .name,
+        .phone,
+        .password1,
+        .password2,
+        .button-container,
+        .terms,
+        .or,
+        .google,
+        .facebook,
+        .existing {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        
+        
+        
+        .eye-icon1 {
+            position: absolute;
+            right: 10px;
+            top: 25%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+       }
+       
+       .eye-icon2 {
+           position: absolute;
+           right: 10px;
+           top: 35%;
+           transform: translateY(-50%);
+           width: 20px;
+           height: 20px;
+       }
+        
+        #fname,
+        #lname {
+            width: 50%;
+        }
+        
+        #pnum,
+        #pwd1,
+        #pwd2,
+        #pwd3 {
+            width: 100%;
+        }
+        
+        .terms,
+        .existing {
+           font-size: 13px;
+       }
+       
+       .existing {
+           margin-top: 10px;
+       }
+        
+        #submit-button {
+            width: 50%;
+            height: 30px;
+            border-radius: 20px;
+            /border: 0.5px solid black;
+            border: none;
+            /background-color: #fff;
+            box-shadow: -5px -5px 9px rgba(255,255,255,0.45), 5px 5px 9px rgba(94,104,121,0.3);
+        }
+        
+        #submit-button:hover {
+           box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);
+       }
+       
+       .button {
+           border: none;
+           background-color: transparent;
+        }
+       
+       .or {
+           margin: 15px 0px 15px 0px;
+           font-size: 13px;
+       }
+       
+       .other {
+           display: flex;
+           flex-direction: column;
+           gap: 5px;
+       }
+       
+       .google, 
+       .facebook {
+           border: 0.2px solid black;
+           height: 30px;
+           width: 100%;
+           border-radius: 5px;
+           margin: 0 auto;
+           /background-color: #f9cdfc;
+       }
+       
+       #c2 {
+          display: none;
+       }
+       
+       #c2 #submit-button {
+          margin-top: 10px;
+       }
+       
+       .eye-icon3 {
+           position: absolute;
+           right: 10px;
+           top: 20%;
+           transform: translateY(-50%);
+           width: 20px;
+           height: 20px;
+       }
+       
+       .title {
+            /border: 1px solid black;
+            position: absolute;
+            top: 25%;
+            left: 10%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .kp {
+            font-size: 20px;
+            color: #333;
+        }
+        
+        #kp {
+            font-size: 50px;
+            font-family: serif;
+        }
+        
+        .social-icons {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+        
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+        }
+        
+        #customer-support {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            border: 5px solid #fff;
+            padding: 8px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1 class="kp">
+            WELCOME TO <br>
+            <span id="kp"> KIDS PARADISE </span> 
+        </h1>
+        <div class="quote">
+            "Where every toy sparks a smile, <br> and every playtime is an adventure."
+        </div>
+        <div class="social-icons">
+            <img src="facebook.png">
+            <img src="google.png">
+        </div>
+    </div>
+    <img src="tech-support.png" id="customer-support">
+    <div class="container" id="c1">
+        <form>
+            <div class="head">
+                SIGN UP
+            </div> <!-- head -->
+            <div class="input-container">
+                <div class="fields">      
+                    <div class="name">
+                        <input type="text" name="firstname" id="fname" placeholder="First name" required>
+                        <input type="text" name="lastname" id="lname" placeholder="Last name" required>
+                    </div> <!-- name -->
+                    <div class="phone">
+                        <input type="number" name="phonenumber" id="pnum" placeholder="Phone number" required>
+                    </div> <!-- phone -->
+                    <div class="password1">
+                        <input type="password" name="password" id="pwd1" placeholder="Password" required>
+                        <img src="hide.png" class="eye-icon1" onclick="togglePasswordVisibility1()" alt="Toggle Password Visibility">
+                    </div> <!-- password1 -->
+                    <div class="password2">
+                        <input type="password" name="password" id="pwd2" placeholder="Confirm password" required>
+                        <img src="hide.png" class="eye-icon2" onclick="togglePasswordVisibility2()" alt="Toggle Password Visibility">
+                    </div> <!-- password2 -->
+                </div> <!-- fields -->
+                <div class="terms">
+                    <input type="checkbox" name="terms" id="terms" required>
+                    I agreed to the terms of service
+                </div> <!-- terms -->
+                <div class="button-container">
+                    <input type="submit" value="Signup" id="submit-button">
+                </div> <!-- button-container -->
+                <div class="existing">
+                    Already have an account? <button  id="signupButton" class="button" onclick="showSection('c2')"> Sign in here </button>
+                </div> <!-- existing -->
+                <div class="or">
+                    or
+                </div> <!-- or -->
+                <div class="other">
+                    <div class="google">
+                        <img src="google.png" style="width: 20px; height: 20px;">
+                        Sign in with google
+                    </div> <!-- google -->
+                    <div class="facebook">
+                        <img src="facebook.png" style="width: 20px; height: 20px;">
+                        Sign in with facebook
+                    </div> <!-- facebook -->
+                </div> <!-- other -->
+            </div> <!-- input-container -->
+        </form> <!-- form (#1) -->
+    </div> <!-- #c1 -->
+    <div class="container" id="c2">
+        <form>
+            <div class="head">
+                SIGN IN
+            </div> <!-- head -->
+            <div class="input-container">
+                <div class="fields">
+                    <div class="phone">
+                        <input type="number" name="phonenumber" id="pnum" placeholder="Phone number" required>
+                    </div> <!-- phone -->
+                    <div class="password1">
+                        <input type="password" name="password" id="pwd3" placeholder="Password" required>
+                        <img src="hide.png" class="eye-icon3" onclick="togglePasswordVisibility3()" alt="Toggle Password Visibility">
+                    </div> <!-- password1 -->
+                </div> <!-- fields -->
+                <div class="button-container">
+                    <input type="submit" value="Signin" id="submit-button">
+                </div> <!-- button-container -->
+                <div class="existing">
+                    No account yet? <button id="signinButton" class="button" onclick="showSection('c1')"> Sign up here </button>
+                </div> <!-- existing -->
+                <div class="or">
+                    or
+                </div> <!-- or -->
+                <div class="other">
+                    <div class="google">
+                        <img src="google.png" style="width: 20px; height: 20px;">
+                        Sign in with google
+                    </div> <!-- google -->
+                    <div class="facebook">
+                        <img src="facebook.png" style="width: 20px; height: 20px;">
+                        Sign in with facebook
+                    </div> <!-- facebook -->
+                </div> <!-- other -->
+            </div> <!-- input-container -->
+        </form> <!-- form (#2) -->
+    </div> <!-- #c2 -->
+<script>
+function showSection(sectionId) {
+    var sections = document.querySelectorAll('.container');
+    sections.forEach(function(section) {
+        if (section.id === sectionId) {
+            section.style.display = 'flex';
+        } else {
+            section.style.display = 'none';
+        }
+    });
+}
+
+var signupButton = document.querySelector('#c1 .button');
+var signinButton = document.querySelector('#c2 .button');
+
+signupButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    showSection('c2');
+});
+
+signinButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    showSection('c1');
+});
+
+showSection('c1');
+
+var signupForm = document.querySelector('#c1 form');
+
+signupForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+});
+
+var signinForm = document.querySelector('#c2 form');
+
+signinForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+ 
+});
+
+
+
+function togglePasswordVisibility2() {
+    var pwdInput = document.getElementById("pwd2");
+    var eyeIcon = document.querySelector(".eye-icon2");
+    
+    if (pwdInput.type === "password") {
+        pwdInput.type = "text";
+        eyeIcon.src = "view.png";
+    } else {
+        pwdInput.type = "password";
+        eyeIcon.src = "hide.png";
+    }
+}
+
+function togglePasswordVisibility1() {
+    var pwdInput = document.getElementById("pwd1");
+    var eyeIcon = document.querySelector(".eye-icon1");
+    
+    if (pwdInput.type === "password") {
+        pwdInput.type = "text";
+        eyeIcon.src = "view.png";
+    } else {
+        pwdInput.type = "password";
+        eyeIcon.src = "hide.png";
+    }
+}
+
+function togglePasswordVisibility3() {
+    var pwdInput = document.getElementById("pwd3");
+    var eyeIcon = document.querySelector(".eye-icon3");
+    
+    if (pwdInput.type === "password") {
+        pwdInput.type = "text";
+        eyeIcon.src = "view.png";
+    } else {
+        pwdInput.type = "password";
+        eyeIcon.src = "hide.png";
+    }
+}
+</script>
+</body>
+</html>
